@@ -1,1 +1,1 @@
-# JavaScript Es6 basic 
+## 0x00. ES6 Basics

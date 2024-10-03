@@ -1,13 +1,10 @@
-/* eslint-disable guard-for-in */
 export default function createIteratorObject(report) {
-  const employees = [];
-
-  // Loop through each department in the report
-  for (const department in report.allEmployees) {
-    // Add each employee to the employees array
-    employees.push(...report.allEmployees[department]);
+  let allEmployees = [];
+  for (const item of Object.values(report.allEmployees)) {
+    allEmployees = [
+      ...allEmployees,
+      ...item,
+    ];
   }
-
-  // Return an iterator for the employees array
-  return employees[Symbol.iterator]();
+  return allEmployees;
 }
